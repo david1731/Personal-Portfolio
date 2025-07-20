@@ -102,7 +102,7 @@ export const projectsData = [
     title: "HustleHooperPR Web App",
     description:
       "Full-stack app for basketball trainers and clients to book and manage training sessions, with Stripe and Google login integration.",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "hustlehoopers.png",
     technologies: ["React", "Next.js", "Stripe", "Google Auth", "PostgreSQL", "Vercel"],
     featured: true,
     status: "Completed",
