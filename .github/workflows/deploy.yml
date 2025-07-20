@@ -22,7 +22,9 @@ jobs:
         run: npm install
 
       - name: Build the project
-        run: npm run build
+        run: |
+          npm run build
+          npx next export
 
       - name: Copy build to docs folder
         run: |
