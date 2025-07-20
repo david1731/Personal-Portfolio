@@ -35,7 +35,7 @@ export function ProfileSection() {
             <div className="relative group">
               <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-1 animate-pulse">
                 <img
-                  src="/profile_pic.jpeg"
+                  src="profile_pic.jpeg"
                   alt={profileData.name}
                   width={160}
                   height={160}
