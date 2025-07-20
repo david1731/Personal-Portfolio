@@ -3,6 +3,7 @@ const nextConfig = {
   output: 'export',
   basePath: '/Personal-Portfolio',
   assetPrefix: '/Personal-Portfolio/',
+  distDir: 'docs',
   eslint: {
     ignoreDuringBuilds: true,
   },
