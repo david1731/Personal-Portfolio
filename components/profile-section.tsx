@@ -3,12 +3,28 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Links from "./links/links"
+import { Link } from "@/lib/data"
 import { Github, Linkedin, Mail, MapPin, Download } from "lucide-react"
 import { profileData } from "@/lib/data"
 import { useState } from "react"
 
 export function ProfileSection() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
+  const links: Link[] = [
+    {
+      link: "",
+      context: "contactme"
+    },
+    {
+      link: "https://www.linkedin.com/in/davidmendezrosa",
+      context: "linkedin"
+    },
+    {
+      link: "https://github.com/david1731",
+      context: "github"
+    }
+  ]
 
   return (
     <section id="profile-section" className="relative">
@@ -55,29 +71,7 @@ export function ProfileSection() {
               </div>
 
               <div className="flex gap-4 justify-center lg:justify-start animate-fade-in-up delay-500">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact Me
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-500/30 text-blue-300 hover:bg-blue-500/10 bg-transparent transform hover:scale-105 transition-all duration-300"
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-500/30 text-blue-300 hover:bg-blue-500/10 bg-transparent transform hover:scale-105 transition-all duration-300"
-                >
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
+                <Links links={links}/>
                 <Button
                   size="lg"
                   variant="outline"

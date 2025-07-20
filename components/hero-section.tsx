@@ -7,7 +7,13 @@ import { useState, useEffect } from "react"
 
 export function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0)
-  const roles = ["Full Stack Developer", "UI/UX Designer", "Problem Solver", "Tech Enthusiast"]
+  const roles = [
+    "Full Stack Developer",
+    "Software Engineer",
+    "Cloud & DevOps Enthusiast",
+    "Clean Architecture Advocate",
+    "Tech Mentor",
+  ]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,8 +75,7 @@ export function HeroSection() {
               </span>
             </p>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Passionate about crafting beautiful, functional, and user-centered digital solutions that make a
-              difference in people's lives.
+              Passionate about building scalable, cleanly architected web and mobile applications that solve real-world problems through thoughtful design and efficient engineering.
             </p>
           </div>
 

@@ -1,3 +1,8 @@
+export interface Link {
+  link: string;
+  context: "linkedin" | "github" | "contactme"
+}
+
 export const profileData = {
   name: "David J. Méndez Rosa",
   title: "Software Engineer & Full Stack Developer",
