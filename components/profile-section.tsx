@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ProfileLinks from "./links/profile_links"
 import { ProfileLink } from "@/lib/data"
-import { Github, Linkedin, Mail, MapPin, Download } from "lucide-react"
+import { MapPin, Eye } from "lucide-react"
 import { profileData } from "@/lib/data"
 import { useState } from "react"
 
@@ -72,14 +72,21 @@ export function ProfileSection() {
 
               <div className="flex gap-4 justify-center lg:justify-start animate-fade-in-up delay-500">
                 <ProfileLinks links={links}/>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 bg-transparent transform hover:scale-105 transition-all duration-300"
+
+                <a
+                  href="https://docs.google.com/document/d/1j47QyVKP1jtofmDyo_Du2qeZiJDsa5iQXJ1hB963j80/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Download className="w-4 h-4 mr-2" />
-                  Resume
-                </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 bg-transparent transform hover:scale-105 transition-all duration-300"
+                  >
+                    <Eye className="w-4 h-4 mr-2" />
+                    Resume
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

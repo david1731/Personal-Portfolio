@@ -104,13 +104,20 @@ export function HeroSection() {
             >
               Explore My Work
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-blue-400/30 text-blue-300 hover:bg-blue-500/10 bg-transparent px-8 py-3 text-lg font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+
+            <a
+              href="https://docs.google.com/document/d/1j47QyVKP1jtofmDyo_Du2qeZiJDsa5iQXJ1hB963j80/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Download Resume
-            </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-blue-400/30 text-blue-300 hover:bg-blue-500/10 bg-transparent px-8 py-3 text-lg font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+              >
+                View Resume
+              </Button>
+            </a>
           </div>
 
           {/* Scroll indicator */}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { Github, ExternalLink } from "lucide-react"
+import { Github, ExternalLink, EyeOff } from "lucide-react"
 
 interface ProjectLinkProps {
 	code: string;
@@ -8,7 +8,32 @@ interface ProjectLinkProps {
 	is_private?: boolean;
 }
 
-export default function ProjectLinks({ code, live }: ProjectLinkProps) {
+export default function ProjectLinks({ code, live, is_private }: ProjectLinkProps) {
+	if (is_private) {
+		return (
+			<div className="flex gap-2">
+				<Button
+					size="sm"
+					variant="outline"
+					className="border-slate-500/30 text-slate-400 bg-transparent cursor-not-allowed opacity-60"
+					disabled
+				>
+					<EyeOff className="w-4 h-4 mr-1" />
+					Private
+				</Button>
+
+				<Button
+					size="sm"
+					className="bg-slate-600 text-slate-400 cursor-not-allowed opacity-60"
+					disabled
+				>
+					<EyeOff className="w-4 h-4 mr-1" />
+					Private
+				</Button>
+			</div>
+		)
+	}
+
 	return (
 		<>
 			<div className="flex gap-2">
