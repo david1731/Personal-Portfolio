@@ -1,4 +1,4 @@
-export interface Link {
+export interface ProfileLink {
   link: string;
   context: "linkedin" | "github" | "contactme"
 }
@@ -94,6 +94,9 @@ export const projectsData = [
     technologies: ["SwiftUI", "FastAPI", "AWS Lambda", "PostgreSQL", "Docker"],
     featured: true,
     status: "In Progress",
+    live: "",
+    code: "",
+    is_private: true
   },
   {
     title: "HustleHooperPR Web App",
@@ -103,5 +106,8 @@ export const projectsData = [
     technologies: ["React", "Next.js", "Stripe", "Google Auth", "PostgreSQL", "Vercel"],
     featured: true,
     status: "Completed",
+    live: "https://hustlehooperspr.vercel.app/",
+    code: "https://github.com/david1731/hustle-hooperspr-v2.0",
+    is_private: false
   },
 ]

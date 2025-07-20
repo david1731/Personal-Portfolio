@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { Github, Linkedin, Mail, MapPin, Download } from "lucide-react"
-import { Link } from "@/lib/data";
+import { Github, Linkedin, Mail } from "lucide-react"
+import { ProfileLink } from "@/lib/data";
 
 interface LinkProps {
-  links: Link[]
+  links: ProfileLink[]
 }
 
-export default function Links({ links }: LinkProps) {
+export default function ProfileLinks({ links }: LinkProps) {
   const styles = {
     linkedin: "border-blue-500/30 text-blue-300 hover:bg-blue-500/10 bg-transparent transform hover:scale-105 transition-all duration-300",
     github: "border-blue-500/30 text-blue-300 hover:bg-blue-500/10 bg-transparent transform hover:scale-105 transition-all duration-300",

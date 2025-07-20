@@ -3,15 +3,15 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import Links from "./links/links"
-import { Link } from "@/lib/data"
+import ProfileLinks from "./links/profile_links"
+import { ProfileLink } from "@/lib/data"
 import { Github, Linkedin, Mail, MapPin, Download } from "lucide-react"
 import { profileData } from "@/lib/data"
 import { useState } from "react"
 
 export function ProfileSection() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
-  const links: Link[] = [
+  const links: ProfileLink[] = [
     {
       link: "",
       context: "contactme"
@@ -71,7 +71,7 @@ export function ProfileSection() {
               </div>
 
               <div className="flex gap-4 justify-center lg:justify-start animate-fade-in-up delay-500">
-                <Links links={links}/>
+                <ProfileLinks links={links}/>
                 <Button
                   size="lg"
                   variant="outline"
