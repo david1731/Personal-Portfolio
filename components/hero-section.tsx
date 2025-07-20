@@ -65,7 +65,7 @@ export function HeroSection() {
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-semibold">
                   {roles[currentRole]}
                 </span>
-                <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 animate-pulse" />
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 animate-pulse block" />
               </span>
             </p>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">

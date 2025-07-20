@@ -19,7 +19,7 @@ export function ProfileSection() {
             <div className="relative group">
               <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-1 animate-pulse">
                 <img
-                  src="/placeholder.svg?height=160&width=160"
+                  src="/profile_pic.jpeg?height=160&width=160"
                   alt={profileData.name}
                   className="w-full h-full rounded-full object-cover bg-slate-700 transition-transform duration-300 group-hover:scale-105"
                 />
