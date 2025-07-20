@@ -36,7 +36,7 @@ export const experienceData = [
       "Designed a relational database to support workflows and approvals",
       "Integrated both REST and GraphQL APIs",
     ],
-    technologies: ["TypeScript", "FastAPI", "Databricks", "Ray", "PuLP", "AWS S3"],
+    technologies: ["TypeScript", "FastAPI", "Express.js", "React","Databricks", "Ray", "PuLP", "AWS S3"],
   },
   {
     position: "Freelance Software Engineer",
@@ -110,4 +110,36 @@ export const projectsData = [
     code: "https://github.com/david1731/hustle-hooperspr-v2.0",
     is_private: false
   },
+  {
+    title: "Data Engineering Project",
+    description: 
+      "Venmito Data Engineering API & Visuals is a Dockerized FastAPI project connected to PostgreSQL that delivers pre-generated charts and Excel reports for real-time data insights. It provides both interactive API endpoints for developers and easy-to-read visuals for non-technical stakeholders.",
+    technologies: ["Python", "FastAPI", "Docker", "PostgreSQL", "Pandas"],
+    featured: false,
+    status: "Completed",
+    code: "https://github.com/david1731/Data-Engineering-Project",
+    is_private: false,
+    live: ""
+  },
+  {
+    title: "HoopStats Search Engine",
+    description: "HoopStats Search Engine is a web application designed to search and display basketball player statistics from the movie Space Jam.",
+    technologies: ["Angular", "Django", "Python", "Typescript", "PostgreSQL"],
+    featured: false,
+    status: "Completed",
+    live: "",
+    code: "https://github.com/david1731/HoopStats-Search-Engine",
+    is_private: false
+  },
+  {
+    title: "Postwar Apocalypse",
+    description: "PostWar Apocalypse, a Unity-powered video game, players control an air fighter tasked with eliminating enemy ships in a post-war city. Leveraging C# and Unity tools, we implemented dynamic flying movements for the player's ship. Using a PlayStation 5 controller, players navigate the city and engage enemy ships using intuitive button interactions",
+    technologies: ["C#", "Unity"],
+    featured: false,
+    status: "Completed",
+    live: "",
+    code: "https://github.com/david1731/PostWarApocalypseVideoGame",
+    is_private: false
+  }
+
 ]
