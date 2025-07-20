@@ -1,72 +1,92 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Github, Linkedin, Mail, MapPin } from "lucide-react"
+import ProfileLinks from "./links/profile_links"
+import { ProfileLink } from "@/lib/data"
+import { MapPin, Eye } from "lucide-react"
 import { profileData } from "@/lib/data"
+import { useState } from "react"
 
 export function ProfileSection() {
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
+  const links: ProfileLink[] = [
+    {
+      link: "",
+      context: "contactme"
+    },
+    {
+      link: "https://www.linkedin.com/in/davidmendezrosa",
+      context: "linkedin"
+    },
+    {
+      link: "https://github.com/david1731",
+      context: "github"
+    }
+  ]
+
   return (
-    <section className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-3xl blur-3xl" />
-      <Card className="relative bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+    <section id="profile-section" className="relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-3xl blur-3xl animate-pulse" />
+      <Card className="relative bg-slate-800/50 border-blue-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-500 transform hover:scale-[1.02]">
         <CardContent className="p-8">
           <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="relative">
-              <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 p-1">
+            <div className="relative group">
+              <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-1 animate-pulse">
                 <img
-                  src="/placeholder.svg?height=160&width=160"
+                  src="/profile_pic.jpeg?height=160&width=160"
                   alt={profileData.name}
-                  className="w-full h-full rounded-full object-cover bg-slate-700"
+                  className="w-full h-full rounded-full object-cover bg-slate-700 transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-800" />
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full border-4 border-slate-800 animate-pulse" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
             <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-2">{profileData.name}</h1>
-              <p className="text-xl text-purple-300 mb-4">{profileData.title}</p>
-              <div className="flex items-center justify-center lg:justify-start gap-2 text-slate-400 mb-4">
-                <MapPin className="w-4 h-4" />
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-2 animate-fade-in-up">{profileData.name}</h1>
+              <p className="text-xl text-blue-300 mb-4 animate-fade-in-up delay-100">{profileData.title}</p>
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-slate-400 mb-4 animate-fade-in-up delay-200">
+                <MapPin className="w-4 h-4 text-blue-400" />
                 <span>{profileData.location}</span>
               </div>
-              <p className="text-slate-300 mb-6 max-w-2xl">{profileData.bio}</p>
+              <p className="text-slate-300 mb-6 max-w-2xl animate-fade-in-up delay-300">{profileData.bio}</p>
 
-              <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
-                {profileData.skills.map((skill) => (
+              <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start animate-fade-in-up delay-400">
+                {profileData.skills.map((skill, index) => (
                   <Badge
                     key={skill}
                     variant="secondary"
-                    className="bg-purple-500/20 text-purple-300 border-purple-500/30"
+                    className={`bg-blue-500/20 text-blue-300 border-blue-500/30 cursor-pointer transition-all duration-300 transform hover:scale-110 ${
+                      hoveredSkill === skill ? "bg-blue-500/40 shadow-lg shadow-blue-500/25" : ""
+                    }`}
+                    onMouseEnter={() => setHoveredSkill(skill)}
+                    onMouseLeave={() => setHoveredSkill(null)}
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {skill}
                   </Badge>
                 ))}
               </div>
 
-              <div className="flex gap-4 justify-center lg:justify-start">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600"
+              <div className="flex gap-4 justify-center lg:justify-start animate-fade-in-up delay-500">
+                <ProfileLinks links={links}/>
+
+                <a
+                  href="https://docs.google.com/document/d/1j47QyVKP1jtofmDyo_Du2qeZiJDsa5iQXJ1hB963j80/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact Me
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-slate-600 text-slate-300 hover:bg-slate-700 bg-transparent"
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-slate-600 text-slate-300 hover:bg-slate-700 bg-transparent"
-                >
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 bg-transparent transform hover:scale-105 transition-all duration-300"
+                  >
+                    <Eye className="w-4 h-4 mr-2" />
+                    Resume
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
